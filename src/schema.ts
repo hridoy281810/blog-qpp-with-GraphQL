@@ -5,7 +5,6 @@ type Query {
     posts:[Post]
     profile(userId:ID!):Profile
 }  
-
 type Mutation {
   signup(name:String!,
     email:String!,
@@ -29,14 +28,14 @@ type AuthPayload{
   userError: String
   token:String
 }
-type Post {
-    id:ID!
-    title:String!
-    content:String!
-    author:User
-    createdAt: String!
-    published: Boolean!
-   }
+   type Post {
+        id: ID!
+        title: String!
+        content: String!
+        author: User
+        createdAt: String!
+        published: Boolean!
+    }
   type User {
    id:ID!
    name:String!
@@ -54,8 +53,6 @@ type Post {
   }
   input PostInput {
   title:String
-   content:String
-    
+   content:String 
   }
-   
 `;

@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt"
 import { jwtHelper } from "../../utils/jwtHelper";
 interface UserInfo {name:string, email:string, password:string,bio?:string}
-const prisma = new PrismaClient()
+ const prisma = new PrismaClient()
 export const authResolvers = {
     signup:async (parent:any,args:UserInfo,context:any)=> {
         const isExist = await prisma.user.findFirst({
